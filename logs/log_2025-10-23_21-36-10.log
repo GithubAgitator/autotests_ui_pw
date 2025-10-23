@@ -1,0 +1,10 @@
+
+-----
+Test: test_login.py::test_login (call)
+Start time: 2025-10-23 21:36:12.078310
+Start name method: Регистрация пользователя
+
+End time: 2025-10-23 21:36:20.204835
+End name method: login
+
+-----

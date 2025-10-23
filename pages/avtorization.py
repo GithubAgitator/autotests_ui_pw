@@ -16,21 +16,21 @@ class Avtorizacia(Base):
 
 
     # Locators
-    email = "//div[@data-testid='login-form-email-input']//div//input"
+    email = "login-form-email-input"
     password = "//input[@type='password']"
-    btn = "//button[text()='Login']"
+    btn = "login-page-login-button"
     text_alert = "//div[text()='Wrong email or password']"
 
 
     # Getters
     def get_email(self):
-        return self.page.locator(self.email)
+        return self.page.get_by_test_id(self.email).locator('input')
 
     def get_password(self):
         return self.page.locator(self.password)
 
     def get_btn(self):
-        return self.page.locator(self.btn)
+        return self.page.get_by_test_id(self.btn)
 
     def get_text_alert(self):
         return self.page.locator(self.text_alert)
