@@ -1,0 +1,10 @@
+
+-----
+Test: test_desabled.py::test_desabled (call)
+Start time: 2025-10-26 21:46:49.517479
+Start name method: Проверка, что кнопка неактивна
+
+End time: 2025-10-26 21:46:58.164269
+End name method: Кнопка не активна, заголовок изменен
+
+-----
