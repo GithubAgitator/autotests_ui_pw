@@ -42,5 +42,6 @@ class RegHw(Base):
             expect(self.get_no_results()).to_have_text("There is no results")
             self.get_icon()
             self.get_res2()
+            expect(self.get_res2()).to_have_text("Results from the load test pipeline will be displayed here")
             self.page.wait_for_timeout(5000)
             Logger.add_end_step(method="Пользователь залогинен")
