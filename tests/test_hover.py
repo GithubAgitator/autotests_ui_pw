@@ -1,5 +1,4 @@
 import allure
-from playwright.sync_api import sync_playwright
 from pages.hover import Hover
 from playwright.sync_api import sync_playwright, Request, Response
 from pages.logger import log_request, log_response
