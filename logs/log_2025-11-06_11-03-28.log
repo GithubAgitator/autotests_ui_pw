@@ -1,0 +1,20 @@
+
+-----
+Test: tests/test_reg_hw_res.py::test_register (call)
+Start time: 2025-11-06 11:03:34.590159
+Start name method: register
+
+End time: 2025-11-06 11:03:42.603478
+End name method: Пользователь залогинен
+
+-----
+
+-----
+Test: tests/test_res_register.py::test_register (call)
+Start time: 2025-11-06 11:03:46.875312
+Start name method: register
+
+End time: 2025-11-06 11:03:55.630932
+End name method: Пользователь зарегистрирован
+
+-----

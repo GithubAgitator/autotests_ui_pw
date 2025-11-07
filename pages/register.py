@@ -6,8 +6,7 @@ from utilities.logger import Logger
 class Register(Base):
 
     url = ("https://elk.stm-labs.ru/lk/login")
-    def __init__(self, browser, page):
-        self.page = page
+    def __init__(self, browser):
         super().__init__(browser)
         self.browser = browser
 
@@ -20,13 +19,13 @@ class Register(Base):
 
     # Getters
     def get_inn(self):
-        return self.page.locator(self.inn)
+        return self.browser.locator(self.inn)
 
     def get_password(self):
-        return self.page.locator(self.password)
+        return self.browser.locator(self.password)
 
     def get_btn(self):
-        return self.page.locator(self.btn)
+        return self.browser.locator(self.btn)
 
         # Actions
     def input_inn(self):
@@ -42,11 +41,10 @@ class Register(Base):
     def register(self):
         with allure.step("register"):
             Logger.add_start_step(method='register')
-            self.page.goto(self.url, wait_until='networkidle')
+            self.browser.goto(self.url, wait_until='networkidle')
             # self.page.set_viewport_size({"width": 1900, "height": 1040})
             self.input_inn()
             self.input_password()
             self.click_btn()
-            self.page.wait_for_timeout(5000)
             Logger.add_end_step(method="Пользователь зарегистрирован")
 

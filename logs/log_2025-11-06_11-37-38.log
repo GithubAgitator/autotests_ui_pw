@@ -1,0 +1,10 @@
+
+-----
+Test: tests/test_registration.py::test_register1 (call)
+Start time: 2025-11-06 11:37:40.153660
+Start name method: register
+
+End time: 2025-11-06 11:37:42.176845
+End name method: Пользователь зарегистрирован
+
+-----
