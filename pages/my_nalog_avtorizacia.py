@@ -5,8 +5,6 @@ from base.base import Base
 from utilities.logger import Logger
 
 class MyNalogLogin(Base):
-
-    url = ('http://10.250.24.48:30808/auth/login')
     def __init__(self, browser):
         super().__init__(browser)
         self.browser = browser
@@ -16,7 +14,7 @@ class MyNalogLogin(Base):
     login = "//input[@id='login']"
     password = "//input[@id='password']"
     registration_btn = "//button[@type='submit']"
-    name_page = "//span[text()='Иванов Иван Иванович']"
+    # name_page = "//span[text()='Неверный ИНН/пароль']"
 
 
     # Getters
@@ -29,28 +27,27 @@ class MyNalogLogin(Base):
     def get_registration_btn(self):
         return self.browser.locator(self.registration_btn)
 
-    def get_name_page(self):
-        return self.browser.locator(self.name_page)
+    # def get_name_page(self):
+    #     return self.browser.locator(self.name_page)
 
         # Actions
-    def input_login(self):
-        self.get_login().fill("522401474658")
+    def input_login(self, login):
+        self.get_login().fill(login)
 
-    def input_password(self):
-        self.get_password().fill("1")
+    def input_password(self, password):
+        self.get_password().fill(password)
 
     def click_registration_btn(self):
-        self.get_registration_btn().click()
+        expect(self.get_registration_btn()).to_be_disabled()
 
-    def my_nalog(self):
+    def my_nalog(self, login, password):
         with allure.step("register"):
             Logger.add_start_step(method="Регистрация пользователя my nalog")
-            self.browser.goto(self.url)
+            self.visit("http://10.250.24.48:30808/auth/login")
             # self.page.url()
-            self.input_login()
-            self.input_password()
+            self.input_login(login)
+            self.input_password(password)
             self.click_registration_btn()
-            expect(self.get_name_page()).to_have_text("Иванов Иван Иванович")
             time.sleep(5)
             Logger.add_end_step(method="login")
 

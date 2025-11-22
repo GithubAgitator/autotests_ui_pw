@@ -1,0 +1,12 @@
+
+-----
+Test: tests/test_create_course.py::test_created_course[chromium] (call)
+Start time: 2025-11-22 17:14:27.151162
+Start name method: Created course
+
+
+-----
+Test: tests/test_create_course.py::test_created_course[firefox] (call)
+Start time: 2025-11-22 17:14:43.770712
+Start name method: Created course
+

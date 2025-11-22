@@ -1,0 +1,12 @@
+
+-----
+Test: tests/test_dasbord_grafic.py::test_dashboard[chromium] (call)
+Start time: 2025-11-18 21:28:58.508021
+Start name method: Страница с дашбордом
+
+
+-----
+Test: tests/test_dasbord_grafic.py::test_dashboard[firefox] (call)
+Start time: 2025-11-18 21:29:12.756990
+Start name method: Страница с дашбордом
+

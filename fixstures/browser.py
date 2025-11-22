@@ -3,9 +3,10 @@ from playwright.sync_api import Page, Playwright, sync_playwright
 
 
 @pytest.fixture
-def chromium_page(playwright: Playwright) -> Page:
-    browser = playwright.chromium.launch(headless=False)
-    yield browser.new_page()
+def chromium_page():
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False)
+        yield browser.new_page()
 
 @pytest.fixture(scope="session")
 def avtorizacia_user():

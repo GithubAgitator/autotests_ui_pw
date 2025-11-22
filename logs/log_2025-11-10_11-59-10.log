@@ -1,0 +1,10 @@
+
+-----
+Test: tests/test_my_nalog_avtorizacia.py::test_reg_my_nalog (call)
+Start time: 2025-11-10 11:59:12.331875
+Start name method: Регистрация пользователя my nalog
+
+End time: 2025-11-10 11:59:19.908841
+End name method: login
+
+-----

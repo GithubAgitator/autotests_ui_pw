@@ -9,8 +9,7 @@ from utilities.logger import Logger
 class Avtorizacia(Base):
 
     url = ('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login')
-    def __init__(self, browser, page):
-        self.page = page
+    def __init__(self, browser):
         super().__init__(browser)
         self.browser = browser
 
@@ -24,37 +23,38 @@ class Avtorizacia(Base):
 
     # Getters
     def get_email(self):
-        return self.page.get_by_test_id(self.email).locator('input')
+        return self.browser.get_by_test_id(self.email).locator('input')
 
     def get_password(self):
-        return self.page.locator(self.password)
+        return self.browser.locator(self.password)
 
     def get_btn(self):
-        return self.page.get_by_test_id(self.btn)
+        return self.browser.get_by_test_id(self.btn)
 
     def get_text_alert(self):
-        return self.page.locator(self.text_alert)
+        return self.browser.locator(self.text_alert)
 
         # Actions
-    def input_email(self):
-        self.get_email().fill("user.name@gmail.com")
+    def input_email(self, login):
+        self.get_email().fill(login)
 
-    def input_password(self):
-        self.get_password().fill("password")
+    def input_password(self, password):
+        self.get_password().fill(password)
 
     def click_btn(self):
         self.get_btn().click()
 
-    def avtorizacia(self):
+    def avtorizacia(self, login, password):
         with allure.step("register"):
             Logger.add_start_step(method="Регистрация пользователя")
-            self.page.goto(self.url)
-            self.page.set_viewport_size({"width": 1920, "height": 1080})
+            self.browser.goto(self.url)
+            self.browser.set_viewport_size({"width": 1920, "height": 1080})
             # self.page.url()
-            self.input_email()
-            self.input_password()
+            self.input_email(login)
+            self.input_password(password)
             self.click_btn()
             expect(self.get_text_alert()).to_have_text("Wrong email or password")
+            print('Авторизация не успешна, логин/пароль не верный')
             time.sleep(5)
             Logger.add_end_step(method="avtorizacia")
 

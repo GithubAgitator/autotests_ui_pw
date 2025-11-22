@@ -3,6 +3,10 @@ class Base:
     def __init__(self, browser):
         self.browser = browser
 
+    """Метод открытия браузера"""
+    def visit(self, url: str):
+        self.browser.goto(url)
+
 
     """Method GET current url"""
     def get_current_url(self):

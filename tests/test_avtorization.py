@@ -1,15 +1,13 @@
 import allure
-from playwright.sync_api import sync_playwright
+import pytest
 from pages.avtorization import Avtorizacia
 
 
 # Опции браузера
 
 @allure.description("Авторизация")
-def test_autirizacia():
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
-        page = browser.new_page()
+def test_autorizacia(chromium_page, login_password):
+    login, password = login_password
+    avtorization = Avtorizacia(chromium_page)
+    avtorization.avtorizacia(login, password)
 
-        avtorization = Avtorizacia(browser, page)
-        avtorization.avtorizacia()

@@ -1,0 +1,48 @@
+
+-----
+Test: tests/test_my_nalog_avtorizacia.py::test_reg_my_nalog[chromium-login_password0] (call)
+Start time: 2025-11-16 10:08:04.439061
+Start name method: Регистрация пользователя my nalog
+
+
+-----
+Test: tests/test_my_nalog_avtorizacia.py::test_reg_my_nalog[chromium-login_password1] (call)
+Start time: 2025-11-16 10:08:17.978275
+Start name method: Регистрация пользователя my nalog
+
+
+-----
+Test: tests/test_my_nalog_avtorizacia.py::test_reg_my_nalog[chromium-login_password2] (call)
+Start time: 2025-11-16 10:08:20.939536
+Start name method: Регистрация пользователя my nalog
+
+
+-----
+Test: tests/test_my_nalog_avtorizacia.py::test_reg_my_nalog[chromium-login_password3] (call)
+Start time: 2025-11-16 10:08:23.917320
+Start name method: Регистрация пользователя my nalog
+
+
+-----
+Test: tests/test_my_nalog_avtorizacia.py::test_reg_my_nalog[firefox-login_password0] (call)
+Start time: 2025-11-16 10:08:28.810797
+Start name method: Регистрация пользователя my nalog
+
+
+-----
+Test: tests/test_my_nalog_avtorizacia.py::test_reg_my_nalog[firefox-login_password1] (call)
+Start time: 2025-11-16 10:08:34.492348
+Start name method: Регистрация пользователя my nalog
+
+
+-----
+Test: tests/test_my_nalog_avtorizacia.py::test_reg_my_nalog[firefox-login_password2] (call)
+Start time: 2025-11-16 10:08:39.974984
+Start name method: Регистрация пользователя my nalog
+
+
+-----
+Test: tests/test_my_nalog_avtorizacia.py::test_reg_my_nalog[firefox-login_password3] (call)
+Start time: 2025-11-16 10:08:44.932790
+Start name method: Регистрация пользователя my nalog
+

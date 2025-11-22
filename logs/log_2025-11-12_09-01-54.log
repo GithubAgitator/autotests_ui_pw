@@ -1,0 +1,30 @@
+
+-----
+Test: tests/test_avtorization.py::test_autorizacia[login_password0] (call)
+Start time: 2025-11-12 09:01:56.472104
+Start name method: Регистрация пользователя
+
+End time: 2025-11-12 09:02:05.212904
+End name method: avtorizacia
+
+-----
+
+-----
+Test: tests/test_avtorization.py::test_autorizacia[login_password1] (call)
+Start time: 2025-11-12 09:02:07.489567
+Start name method: Регистрация пользователя
+
+End time: 2025-11-12 09:02:28.452214
+End name method: avtorizacia
+
+-----
+
+-----
+Test: tests/test_avtorization.py::test_autorizacia[login_password2] (call)
+Start time: 2025-11-12 09:02:30.733473
+Start name method: Регистрация пользователя
+
+End time: 2025-11-12 09:02:37.845429
+End name method: avtorizacia
+
+-----

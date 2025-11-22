@@ -7,13 +7,9 @@ from utilities.logger import Logger
 
 
 class Login(Base):
-
-    url = ('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration')
-    def __init__(self, browser, page):
-        self.page = page
+    def __init__(self, browser):
         super().__init__(browser)
         self.browser = browser
-
 
     # Locators
     email = "registration-form-email-input"
@@ -25,19 +21,19 @@ class Login(Base):
 
     # Getters
     def get_email(self):
-        return self.page.get_by_test_id(self.email).locator('input')
+        return self.browser.get_by_test_id(self.email).locator('input')
 
     def get_username(self):
-        return self.page.get_by_test_id(self.username).locator('input')
+        return self.browser.get_by_test_id(self.username).locator('input')
 
     def get_password(self):
-        return self.page.get_by_test_id(self.password).locator('input')
+        return self.browser.get_by_test_id(self.password).locator('input')
 
     def get_registration_btn(self):
-        return self.page.get_by_test_id(self.registration_btn)
+        return self.browser.get_by_test_id(self.registration_btn)
 
     def get_dashbord(self):
-        return self.page.locator(self.dashbord)
+        return self.browser.locator(self.dashbord)
 
         # Actions
     def input_email(self):
@@ -55,8 +51,8 @@ class Login(Base):
     def login1(self):
         with allure.step("register"):
             Logger.add_start_step(method="Регистрация пользователя")
-            self.page.goto(self.url)
-            self.page.set_viewport_size({"width": 1920, "height": 1080})
+            self.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration")
+            self.browser.set_viewport_size({"width": 1920, "height": 1080})
             # self.page.url()
             self.input_email()
             self.input_username()
