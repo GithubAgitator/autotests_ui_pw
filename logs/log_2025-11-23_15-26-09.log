@@ -1,0 +1,40 @@
+
+-----
+Test: tests/test_dasbord_grafic.py::test_dashboard[chromium] (call)
+Start time: 2025-11-23 15:26:11.732887
+Start name method: Страница с дашбордом
+
+End time: 2025-11-23 15:26:20.903882
+End name method: Dashboard
+
+-----
+
+-----
+Test: tests/test_dasbord_grafic.py::test_dashboard[chromium] (call)
+Start time: 2025-11-23 15:26:20.904867
+Start name method: Страница с дашбордом
+
+End time: 2025-11-23 15:26:25.987594
+End name method: Dashboard
+
+-----
+
+-----
+Test: tests/test_dasbord_grafic.py::test_dashboard[firefox] (call)
+Start time: 2025-11-23 15:26:31.551153
+Start name method: Страница с дашбордом
+
+End time: 2025-11-23 15:26:38.542786
+End name method: Dashboard
+
+-----
+
+-----
+Test: tests/test_dasbord_grafic.py::test_dashboard[firefox] (call)
+Start time: 2025-11-23 15:26:38.543774
+Start name method: Страница с дашбордом
+
+End time: 2025-11-23 15:26:43.653051
+End name method: Dashboard
+
+-----

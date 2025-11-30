@@ -17,6 +17,11 @@ def browser_page(request: SubRequest):
 def browser_pages_2(request: SubRequest):
     with sync_playwright() as p:
         browser_type = getattr(p, request.param)
-        browser = browser_type.launch(headless=False)
-        context = browser.new_context(storage_state='browser-stage_reg.json')
+        browser = browser_type.launch(headless=False, args=["--start-maximized"] if request.param == "chromium" else [])
+        if request.param == "chromium":
+            context = browser.new_context(no_viewport=True, storage_state='browser-stage_reg.json')
+        else:
+            context = browser.new_context(viewport={'width': 1920, 'height': 1080},
+                                          screen={'width': 1920, 'height': 1080},
+                                          storage_state='browser-stage_reg.json')
         yield context.new_page()

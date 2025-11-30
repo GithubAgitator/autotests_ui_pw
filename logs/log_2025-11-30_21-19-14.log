@@ -1,0 +1,12 @@
+
+-----
+Test: tests/test_course.py::test_cousesed[chromium] (call)
+Start time: 2025-11-30 21:19:18.690043
+Start name method: course
+
+
+-----
+Test: tests/test_course.py::test_cousesed[firefox] (call)
+Start time: 2025-11-30 21:19:28.509023
+Start name method: course
+

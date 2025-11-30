@@ -1,5 +1,4 @@
 import time
-
 from playwright.sync_api import expect
 import allure
 from base.base import Base
@@ -144,5 +143,6 @@ class CreateCourse(Base):
             self.input_description()
             self.input_max_score()
             self.input_min_score()
+            self.check_current_url('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create')
             Logger.add_end_step(method="Created coursed")
 

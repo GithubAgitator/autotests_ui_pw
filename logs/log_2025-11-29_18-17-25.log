@@ -1,0 +1,12 @@
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[chromium] (call)
+Start time: 2025-11-29 18:17:27.276605
+Start name method: Dasboards
+
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[firefox] (call)
+Start time: 2025-11-29 18:17:40.209695
+Start name method: Dasboards
+
