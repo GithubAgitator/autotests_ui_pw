@@ -1,0 +1,20 @@
+
+-----
+Test: tests/test_create_course.py::test_created_course[chromium] (call)
+Start time: 2025-11-23 15:11:36.994777
+Start name method: Created course
+
+End time: 2025-11-23 15:11:45.668247
+End name method: Created coursed
+
+-----
+
+-----
+Test: tests/test_create_course.py::test_created_course[firefox] (call)
+Start time: 2025-11-23 15:11:51.197976
+Start name method: Created course
+
+End time: 2025-11-23 15:11:59.174663
+End name method: Created coursed
+
+-----

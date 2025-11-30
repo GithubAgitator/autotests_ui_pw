@@ -1,0 +1,52 @@
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[chromium] (call)
+Start time: 2025-11-30 10:20:18.765740
+Start name method: Dasboards
+
+End time: 2025-11-30 10:20:25.710042
+End name method: Dasboards
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[chromium] (call)
+Start time: 2025-11-30 10:20:25.710848
+Start name method: Courses
+
+End time: 2025-11-30 10:20:31.206115
+End name method: Courses
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[chromium] (call)
+Start time: 2025-11-30 10:20:31.207138
+Start name method: Logout
+
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[firefox] (call)
+Start time: 2025-11-30 10:20:41.653537
+Start name method: Dasboards
+
+End time: 2025-11-30 10:20:49.618707
+End name method: Dasboards
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[firefox] (call)
+Start time: 2025-11-30 10:20:49.619395
+Start name method: Courses
+
+End time: 2025-11-30 10:20:54.980797
+End name method: Courses
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[firefox] (call)
+Start time: 2025-11-30 10:20:54.981908
+Start name method: Logout
+

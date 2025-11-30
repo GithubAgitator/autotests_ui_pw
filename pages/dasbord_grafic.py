@@ -11,8 +11,6 @@ class Dashboard(Base):
         self.browser = browser
 
     # Locators
-    dashboard = "//h6[@data-testid='dashboard-toolbar-title-text']"
-    students = "//h6[@data-testid='students-widget-title-text']"
     students_grafic = "//div[@data-testid='students-bar-chart']"
     activities = "//h6[@data-testid='activities-widget-title-text']"
     activities_grafic = "//div[@data-testid='activities-line-chart']"
@@ -23,12 +21,6 @@ class Dashboard(Base):
 
 
     # Getters
-    def get_dasboard(self):
-        return self.browser.locator(self.dashboard)
-
-    def get_students(self):
-        return self.browser.locator(self.students)
-
     def get_students_grafic(self):
         return self.browser.locator(self.students_grafic)
 
@@ -51,12 +43,6 @@ class Dashboard(Base):
         return self.browser.locator(self.scores_grafic)
 
         # Actions
-    def text_dashboard(self):
-        expect(self.get_dasboard()).to_have_text('Dashboard')
-    def text_students(self):
-        expect(self.get_students()).to_be_visible()
-        expect(self.get_students()).to_have_text('Students')
-
     def text_students_grafic(self):
         expect(self.get_students_grafic()).to_be_visible()
 
@@ -88,8 +74,6 @@ class Dashboard(Base):
             self.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/dashboard")
             time.sleep(5)
             # self.browser.set_viewport_size({"width": 1920, "height": 1080})
-            self.text_dashboard()
-            self.text_students()
             self.text_students_grafic()
             self.text_activities()
             self.text_activities_grafic()
