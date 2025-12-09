@@ -3,6 +3,8 @@ import time
 import allure
 from base.base import Base
 from utilities.logger import Logger
+from locators.text import Text
+
 
 
 class Dashboard(Base):
@@ -11,62 +13,70 @@ class Dashboard(Base):
         self.browser = browser
 
     # Locators
-    students_grafic = "//div[@data-testid='students-bar-chart']"
-    activities = "//h6[@data-testid='activities-widget-title-text']"
-    activities_grafic = "//div[@data-testid='activities-line-chart']"
-    courses = "//h6[@data-testid='courses-widget-title-text']"
-    courses_grafic = "//div[@data-testid='courses-pie-chart']"
-    scores = "//h6[@data-testid='scores-widget-title-text']"
-    scores_grafic = "//div[@data-testid='scores-scatter-chart']"
+    # students_grafic = "//div[@data-testid='students-bar-chart']"
+    # activities = "//h6[@data-testid='activities-widget-title-text']"
+    # activities_grafic = "//div[@data-testid='activities-line-chart']"
+    # courses = "//h6[@data-testid='courses-widget-title-text']"
+    # courses_grafic = "//div[@data-testid='courses-pie-chart']"
+    # scores = "//h6[@data-testid='scores-widget-title-text']"
+    # scores_grafic = "//div[@data-testid='scores-scatter-chart']"
+
+    students_grafic = "students-bar-chart"
+    activities = 'activities-widget-title-text'
+    activities_grafic = 'activities-line-chart'
+    courses = 'courses-widget-title-text'
+    courses_grafic = 'courses-pie-chart'
+    scores = 'scores-widget-title-text'
+    scores_grafic = 'scores-scatter-chart'
 
 
     # Getters
     def get_students_grafic(self):
-        return self.browser.locator(self.students_grafic)
+        return Text(self.browser, self.students_grafic, 'Students')
 
     def get_activities(self):
-        return self.browser.locator(self.activities)
+        return Text(self.browser, self.activities, 'Activates')
 
     def get_activities_grafic(self):
-        return self.browser.locator(self.activities_grafic)
+        return Text(self.browser, self.activities_grafic, 'Activities_grafic')
 
     def get_courses(self):
-        return self.browser.locator(self.courses)
+        return Text(self.browser, self.courses, 'Courses')
 
     def get_courses_grafic(self):
-        return self.browser.locator(self.courses_grafic)
+        return Text(self.browser, self.courses_grafic, 'courses_grafic')
 
     def get_scores(self):
-        return self.browser.locator(self.scores)
+        return Text(self.browser, self.scores, 'Scores')
 
     def get_scores_grafic(self):
-        return self.browser.locator(self.scores_grafic)
+        return Text(self.browser, self.scores_grafic, 'Scores_grafic')
 
         # Actions
     def text_students_grafic(self):
-        expect(self.get_students_grafic()).to_be_visible()
+        self.get_students_grafic().check_visible()
 
 
     def text_activities(self):
-        expect(self.get_activities()).to_be_visible()
-        expect(self.get_activities()).to_have_text('Activities')
+        self.get_activities().check_visible()
+        self.get_activities().check_have_text('Activities')
 
     def text_activities_grafic(self):
-        expect(self.get_activities_grafic()).to_be_visible()
+        self.get_activities_grafic().check_visible()
 
     def text_courses(self):
-        expect(self.get_courses()).to_be_visible()
-        expect(self.get_courses()).to_have_text('Courses')
+        self.get_courses().check_visible()
+        self.get_courses().check_have_text('Courses')
 
     def text_courses_grafic(self):
-        expect(self.get_courses_grafic()).to_be_visible()
+        self.get_courses_grafic().check_visible()
 
     def text_scores(self):
-        expect(self.get_scores()).to_be_visible()
-        expect(self.get_scores()).to_have_text('Scores')
+        self.get_scores().check_visible()
+        self.get_scores().check_have_text('Scores')
 
     def text_scores_grafic(self):
-        expect(self.get_scores_grafic()).to_be_visible()
+        self.get_scores_grafic().check_visible()
 
     def dashboards(self):
         with allure.step("dashboard"):

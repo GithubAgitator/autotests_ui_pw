@@ -1,0 +1,20 @@
+
+-----
+Test: tests/test_login.py::test_login[chromium] (call)
+Start time: 2025-12-08 21:18:50.420818
+Start name method: Регистрация пользователя
+
+End time: 2025-12-08 21:19:04.683742
+End name method: login
+
+-----
+
+-----
+Test: tests/test_login.py::test_login[firefox] (call)
+Start time: 2025-12-08 21:19:11.631836
+Start name method: Регистрация пользователя
+
+End time: 2025-12-08 21:19:23.867142
+End name method: login
+
+-----

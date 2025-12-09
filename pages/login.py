@@ -4,6 +4,8 @@ import time
 import allure
 from base.base import Base
 from utilities.logger import Logger
+from locators.input import Input
+from locators.button import Button
 
 
 class Login(Base):
@@ -21,16 +23,17 @@ class Login(Base):
 
     # Getters
     def get_email(self):
-        return self.browser.get_by_test_id(self.email).locator('input')
+        return Input(self.browser, self.email, "email")
+        # return self.browser.get_by_test_id(self.email).locator('input')
 
     def get_username(self):
-        return self.browser.get_by_test_id(self.username).locator('input')
+        return Input(self.browser, self.username, "username")
 
     def get_password(self):
-        return self.browser.get_by_test_id(self.password).locator('input')
+        return Input(self.browser,  self.password, "password")
 
     def get_registration_btn(self):
-        return self.browser.get_by_test_id(self.registration_btn)
+        return Button(self.browser, self.registration_btn, "register_btn")
 
     def get_dashbord(self):
         return self.browser.locator(self.dashbord)
@@ -43,6 +46,7 @@ class Login(Base):
         self.get_username().fill("username")
 
     def input_password(self):
+        self.get_password().check_visible()
         self.get_password().fill("password")
 
     def click_registration_btn(self):
