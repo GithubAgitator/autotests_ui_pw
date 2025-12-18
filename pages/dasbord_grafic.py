@@ -1,4 +1,3 @@
-from playwright.sync_api import expect
 import time
 import allure
 from base.base import Base
@@ -13,14 +12,6 @@ class Dashboard(Base):
         self.browser = browser
 
     # Locators
-    # students_grafic = "//div[@data-testid='students-bar-chart']"
-    # activities = "//h6[@data-testid='activities-widget-title-text']"
-    # activities_grafic = "//div[@data-testid='activities-line-chart']"
-    # courses = "//h6[@data-testid='courses-widget-title-text']"
-    # courses_grafic = "//div[@data-testid='courses-pie-chart']"
-    # scores = "//h6[@data-testid='scores-widget-title-text']"
-    # scores_grafic = "//div[@data-testid='scores-scatter-chart']"
-
     students_grafic = "students-bar-chart"
     activities = 'activities-widget-title-text'
     activities_grafic = 'activities-line-chart'

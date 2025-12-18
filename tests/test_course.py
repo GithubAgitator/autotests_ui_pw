@@ -1,5 +1,5 @@
 import allure
-from pages.courses import CourseMenu
+from pages.courses.courses import CourseMenu
 
 
 

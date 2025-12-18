@@ -1,5 +1,5 @@
 import allure
-from pages.create_course import CreateCourse
+from pages.courses.create_course import CreateCourse
 
 
 # Опции браузера

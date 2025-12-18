@@ -1,0 +1,18 @@
+
+-----
+Test: tests/test_login.py::test_login[chromium] (call)
+Start time: 2025-12-12 21:44:42.559886
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_login.py::test_login[firefox] (call)
+Start time: 2025-12-12 21:45:33.693881
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_login2.py::test_hover (call)
+Start time: 2025-12-12 21:45:42.607065
+Start name method: Проверка, что кнопка неактивна
+
