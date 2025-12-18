@@ -1,0 +1,30 @@
+
+-----
+Test: tests/test_login.py::test_login[chromium] (call)
+Start time: 2025-12-12 21:46:45.281488
+Start name method: Регистрация пользователя
+
+End time: 2025-12-12 21:46:52.660644
+End name method: login
+
+-----
+
+-----
+Test: tests/test_login.py::test_login[firefox] (call)
+Start time: 2025-12-12 21:46:57.762370
+Start name method: Регистрация пользователя
+
+End time: 2025-12-12 21:47:10.398143
+End name method: login
+
+-----
+
+-----
+Test: tests/test_login2.py::test_hover (call)
+Start time: 2025-12-12 21:47:13.348988
+Start name method: Проверка, что кнопка неактивна
+
+End time: 2025-12-12 21:47:20.432928
+End name method: Кнопка не активна, заголовок изменен
+
+-----

@@ -1,6 +1,6 @@
 import allure
 from playwright.sync_api import sync_playwright
-from pages.res_register import ResRegister
+from pages.authtentificatia.res_register import ResRegister
 
 
 # Опции браузера

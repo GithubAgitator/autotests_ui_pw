@@ -1,6 +1,6 @@
 import allure
 from pages.list_logout import LogoutSing
-from pages.list_courses import CourseSing
+from pages.courses.list_courses import CourseSing
 from pages.list_dasboard import DasboardSing
 
 

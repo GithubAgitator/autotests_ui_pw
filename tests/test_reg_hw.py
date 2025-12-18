@@ -1,7 +1,7 @@
 import allure
 import pytest
 from playwright.sync_api import sync_playwright
-from pages.reg_hw import RegHw
+from pages.authtentificatia.reg_hw import RegHw
 
 
 # Опции браузера

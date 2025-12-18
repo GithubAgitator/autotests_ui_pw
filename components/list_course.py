@@ -3,7 +3,6 @@ from base.base import Base
 
 
 class ListCourse(Base):
-    # url = 'https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses'
 
     def __init__(self, browser, item):
         super().__init__(browser)
