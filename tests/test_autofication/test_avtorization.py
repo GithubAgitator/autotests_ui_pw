@@ -11,7 +11,6 @@ from allure_commons.types import Severity
 @allure.tag(AllureTags.AUTHRIZATION)
 @allure.severity(Severity.CRITICAL)
 def test_autorizacia(chromium_page, login_password):
-    # allure.dynamic.title(f'Авторизация, выбор логина и пароля {login_password}')
     login, password = login_password
     avtorization = Avtorizacia(chromium_page)
     avtorization.avtorizacia(login, password)
