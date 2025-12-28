@@ -1,9 +1,9 @@
 import time
-
 import allure
 from playwright.sync_api import Page, expect
 from base.base import Base
 from utilities.logger import Logger
+from locators.text import Text
 
 
 class NavbarComponent(Base):
@@ -11,22 +11,25 @@ class NavbarComponent(Base):
         super().__init__(page)
 
     #Locators
-    dashboard = "//h6[@data-testid='dashboard-toolbar-title-text']"
-    students = "//h6[@data-testid='students-widget-title-text']"
+    dashboard = 'dashboard-toolbar-title-text'
+    students = 'students-widget-title-text'
 
     #Getters
     def get_dasboard(self):
-        return self.browser.locator(self.dashboard)
+        return Text(self.browser, self.dashboard, "dasboard")
 
     def get_students(self):
-        return self.browser.locator(self.students)
+        return Text(self.browser, self.students, "students")
 
     #Actions
     def text_dashboard(self):
-        expect(self.get_dasboard()).to_have_text('Dashboard')
+        with allure.step("Надпись Dasboard присутствует"):
+            expect(self.get_dasboard()).to_have_text('Dashboard')
+
     def text_students(self):
-        expect(self.get_students()).to_be_visible()
-        expect(self.get_students()).to_have_text('Students')
+        with allure.step("Надпись Students присутствует"):
+            expect(self.get_students()).to_be_visible()
+            expect(self.get_students()).to_have_text('Students')
 
     def navbar(self):
         with allure.step("dashboard"):

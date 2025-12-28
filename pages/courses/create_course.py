@@ -72,14 +72,17 @@ class CreateCourse(Base):
 
         # Actions
     def text_create_course(self):
-        expect(self.get_create_course()).to_have_text('Create course')
+        with allure.step("Кнопка создание курса"):
+            expect(self.get_create_course()).to_have_text('Create course')
 
     def visible_create_button_course_desable(self):
-        expect(self.get_create_button_course_desable()).to_be_disabled()
-        print('Кнопка для создания курсов присутствует')
+        with allure.step("Кнопка для создания курсов присутствует"):
+            expect(self.get_create_button_course_desable()).to_be_disabled()
+            print('Кнопка для создания курсов присутствует')
 
     def visible_icon(self):
-        expect(self.get_visible_icon()).to_be_visible()
+        with allure.step("Иконка курсов видна"):
+            expect(self.get_visible_icon()).to_be_visible()
 
     def visibled_image_selected(self):
         expect(self.get_image_selected()).to_be_visible()
@@ -99,21 +102,26 @@ class CreateCourse(Base):
 
 
     def input_title(self):
-        self.get_title().fill('Test')
+        with allure.step("Ввели название курсов"):
+            self.get_title().fill('Test')
 
     def input_time(self):
-        self.get_estemated_time().fill('4h')
+        with allure.step("Время прохождения курса"):
+            self.get_estemated_time().fill('4h')
 
     def input_description(self):
-        self.get_description().fill('Python')
+        with allure.step("Описание курса"):
+            self.get_description().fill('Python')
 
     def input_max_score(self):
-        self.get_max_score().click()
-        self.get_max_score().fill('30')
+        with allure.step("Максимальное количество правильных ответов"):
+            self.get_max_score().click()
+            self.get_max_score().fill('30')
 
     def input_min_score(self):
-        self.get_min_score().click()
-        self.get_min_score().fill('5')
+        with allure.step("Минимальное количество правильных ответов"):
+            self.get_min_score().click()
+            self.get_min_score().fill('5')
 
     def cteated_coursed_id(self):
         with allure.step("dashboard"):

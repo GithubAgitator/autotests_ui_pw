@@ -36,12 +36,16 @@ class AvtorizacionUser(Base):
         return Text(self.browser, self.text, 'Text')
 
         # Actions
+    @allure.step("Ввести email")
     def input_email(self):
         self.get_email().fill('user.name@gmail.com')
 
+    @allure.step("Ввести password")
     def input_password(self):
         self.get_password().fill('password')
 
+
+    @allure.step("Нажать на кнопку")
     def click_btn(self):
         self.get_btn().click()
 
