@@ -9,6 +9,8 @@ class MyNalogLogin(Base):
         super().__init__(browser)
         self.browser = browser
 
+    url = "http://10.250.24.48:30808/auth/login"
+
 
     # Locators
     login = "//input[@id='login']"
@@ -43,7 +45,7 @@ class MyNalogLogin(Base):
     def my_nalog(self, login, password):
         with allure.step("register"):
             Logger.add_start_step(method="Регистрация пользователя my nalog")
-            self.visit("http://10.250.24.48:30808/auth/login")
+            self.browser.goto(self.url)
             # self.page.url()
             self.input_login(login)
             self.input_password(password)

@@ -1,15 +1,16 @@
 from playwright.sync_api import expect
-
+from tools.routes import AppRoute
 import time
 import allure
 from base.base import Base
 from locators.text import Text
 from utilities.logger import Logger
+from config import settings
 
 
 class AvtorizacionUser(Base):
 
-    url = ('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login')
+    # url = 'https://nikita-filonov.github.io/qa-automation-engineer-ui-course/'
     def __init__(self, browser):
         super().__init__(browser)
         self.browser = browser
@@ -52,8 +53,7 @@ class AvtorizacionUser(Base):
     def autorizacion(self):
         with allure.step("register"):
             Logger.add_start_step(method="Регистрация пользователя")
-            self.browser.goto(self.url)
-            self.browser.set_viewport_size({"width": 1920, "height": 1080})
+            self.browser.goto(settings.app_url + AppRoute.LOGIN)
             # self.page.url()
             self.input_email()
             self.input_password()

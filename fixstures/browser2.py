@@ -2,39 +2,41 @@ import pytest
 from _pytest.fixtures import SubRequest
 from playwright.sync_api import sync_playwright
 import allure
-from allure_commons.types import AttachmentType
+from config import settings
 
 
 """Фикстура для запуска теста на несколько браузеров"""
-@pytest.fixture(params=['chromium', 'firefox'])
+@pytest.fixture(params=settings.browsers)
 def browser_page(request: SubRequest):
+    browser_name = request.param
     with sync_playwright() as p:
-        browser_type = getattr(p, request.param)
-        browser = browser_type.launch(headless=False)
-        context = browser.new_context()
+        browser_type = getattr(p, browser_name)
+        browser = browser_type.launch(headless=settings.headless)
+        context = browser.new_context(record_video_dir=settings.videos_dir)
         context.tracing.start(screenshots=True, snapshots=True, sources=True)
-        yield context.new_page()
+        page = context.new_page()
+        yield page
 
-        context.tracing.stop(path=f'./tracing/{request.node.name}.zip')
+        context.tracing.stop(path=settings.tracing_dir.joinpath(f'{request.node.name}.zip'))
         context.storage_state(path='browser_page_login.json')
 
-        allure.attach(f'./tracing/{request.node.name}.zip', name='trace', extension='zip')
+        allure.attach.file(settings.tracing_dir.joinpath(f'{request.node.name}.zip'))
+        allure.attach.file(page.video.path(), name='video', attachment_type=allure.attachment_type.WEBM)
 
-@pytest.fixture(params=['chromium', 'firefox'])
+@pytest.fixture(params=settings.browsers)
 def browser_pages_2(request: SubRequest):
+    browser_name = request.param
     with sync_playwright() as p:
-        browser_type = getattr(p, request.param)
-        browser = browser_type.launch(headless=False, args=["--start-maximized"] if request.param == "chromium" else [])
-        if request.param == "chromium":
-            context = browser.new_context(no_viewport=True, storage_state='browser-stage_reg.json')
-            context.tracing.start(screenshots=True, snapshots=True, sources=True)
-        else:
-            context = browser.new_context(viewport={'width': 1920, 'height': 1080},
-                                          screen={'width': 1920, 'height': 1080},
-                                          storage_state='browser-stage_reg.json')
-            context.tracing.start(screenshots=True, snapshots=True, sources=True)
+        browser_type = getattr(p, browser_name)
+        browser = browser_type.launch(headless=settings.headless)
+        context = browser.new_context(record_video_dir=settings.videos_dir, no_viewport=True,
+                                          storage_state=settings.browser_state_file,
+                                      viewport=settings.viewport_settings.desktop,
+                                               )
+        context.tracing.start(screenshots=True, snapshots=True, sources=True)
+        page = context.new_page()
+        yield page
+        context.tracing.stop(path=settings.tracing_dir.joinpath(f'{request.node.name}.zip'))
 
-        yield context.new_page()
-        context.tracing.stop(path=f'./tracing/{request.node.name}.zip')
-
-        allure.attach(f'./tracing/{request.node.name}.zip', name='trace', extension='zip')
+        allure.attach.file(settings.tracing_dir.joinpath(f'{request.node.name}.zip'))
+        allure.attach.file(page.video.path(), name='video', attachment_type=allure.attachment_type.WEBM)
