@@ -46,6 +46,7 @@ class Settings(BaseSettings):
     test_data: TestData
     videos_dir: DirectoryPath
     tracing_dir: DirectoryPath
+    allure_results_dir: DirectoryPath
     browser_state_file: FilePath
 
 
@@ -56,15 +57,18 @@ class Settings(BaseSettings):
     def initialize(cls) -> Self:
         videos_dir = DirectoryPath("./videos")
         tracing_dir = DirectoryPath("./tracing")
+        allure_results_dir = DirectoryPath("./allure-results")
         browser_state_file = FilePath("browser-stage_reg.json")
         videos_dir.mkdir(exist_ok=True)
         tracing_dir.mkdir(exist_ok=True)
+        allure_results_dir.mkdir(exist_ok=True)
         # Создаем файл состояния браузера, если его нет
         browser_state_file.touch(exist_ok=True)  # Если файл существует, то игнорируем ошибку
 
         return Settings(
             videos_dir=videos_dir,
             tracing_dir=tracing_dir,
+            allure_results_dir=allure_results_dir,
             browser_state_file=browser_state_file
         )
 

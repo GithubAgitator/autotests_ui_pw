@@ -3,7 +3,7 @@ from _pytest.fixtures import SubRequest
 from playwright.sync_api import sync_playwright
 import allure
 from config import settings
-
+from tools.playwright.mocks import mock_static_resourses
 
 """Фикстура для запуска теста на несколько браузеров"""
 @pytest.fixture(params=settings.browsers)
@@ -35,6 +35,7 @@ def browser_pages_2(request: SubRequest):
                                                )
         context.tracing.start(screenshots=True, snapshots=True, sources=True)
         page = context.new_page()
+        mock_static_resourses(page)
         yield page
         context.tracing.stop(path=settings.tracing_dir.joinpath(f'{request.node.name}.zip'))
 

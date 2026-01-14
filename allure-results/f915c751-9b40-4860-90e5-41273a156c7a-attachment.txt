@@ -1,0 +1,12 @@
+[32mINFO    [0m CREATECOURSE:create_course.py:80 Кнопка создание курса
+[32mINFO    [0m CREATECOURSE:create_course.py:86 Кнопка для создания курсов присутствует
+[32mINFO    [0m CREATECOURSE:create_course.py:93 Иконка курсов видна
+[32mINFO    [0m CREATECOURSE:create_course.py:116 Ввели название курсов
+[32mINFO    [0m COURSED:course_components.py:45 Test
+[32mINFO    [0m CREATECOURSE:create_course.py:122 Время прохождения курса
+[32mINFO    [0m CREATECOURSE:create_course.py:128 Описание курса
+[32mINFO    [0m COURSED:course_components.py:55 Python
+[32mINFO    [0m CREATECOURSE:create_course.py:134 Максимальное количество правильных ответов
+[32mINFO    [0m COURSED:course_components.py:60 30
+[32mINFO    [0m CREATECOURSE:create_course.py:141 Минимальное количество правильных ответов
+[32mINFO    [0m COURSED:course_components.py:65 5
