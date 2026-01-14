@@ -1,7 +1,9 @@
 from playwright.sync_api import expect
 from base.base import Base
+from tools.logger import get_logger
 
 
+logger = get_logger("COURSED")
 class Coursed(Base):
 
     def __init__(self, browser):
@@ -40,22 +42,27 @@ class Coursed(Base):
 
     def check_title(self, value):
         expect(self.get_title()).to_be_visible()
+        logger.info(value)
         expect(self.get_title()).to_have_value(value)
 
     def check_times(self, value):
         expect(self.get_times()).to_be_visible()
+        logger.info(value)
         expect(self.get_times()).to_have_value(value)
 
     def check_description(self, value):
         expect(self.get_description()).to_be_visible()
+        logger.info(value)
         expect(self.get_description()).to_have_value(value)
 
     def check_max_score(self, value):
         expect(self.get_max_score()).to_be_visible()
+        logger.info(value)
         expect(self.get_max_score()).to_have_value(value)
 
     def check_min_score(self, value):
         expect(self.get_min_score()).to_be_visible()
+        logger.info(value)
         expect(self.get_min_score()).to_have_value(value)
 
 

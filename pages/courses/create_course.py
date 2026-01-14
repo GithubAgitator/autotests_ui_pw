@@ -2,10 +2,13 @@ import time
 from playwright.sync_api import expect
 import allure
 from base.base import Base
+from tools.logger import get_logger
 from utilities.logger import Logger
 from components.course_components import Coursed
 from components.creater_img_components import CreatersImg
 
+
+logger = get_logger("CREATECOURSE")
 
 class CreateCourse(Base):
     def __init__(self, browser):
@@ -72,16 +75,22 @@ class CreateCourse(Base):
 
         # Actions
     def text_create_course(self):
-        with allure.step("Кнопка создание курса"):
+        step = f"Кнопка создание курса"
+        with allure.step(step):
+            logger.info(step)
             expect(self.get_create_course()).to_have_text('Create course')
 
     def visible_create_button_course_desable(self):
-        with allure.step("Кнопка для создания курсов присутствует"):
+        step = f"Кнопка для создания курсов присутствует"
+        with allure.step(step):
+            logger.info(step)
             expect(self.get_create_button_course_desable()).to_be_disabled()
             print('Кнопка для создания курсов присутствует')
 
     def visible_icon(self):
-        with allure.step("Иконка курсов видна"):
+        step = "Иконка курсов видна"
+        with allure.step(step):
+            logger.info(step)
             expect(self.get_visible_icon()).to_be_visible()
 
     def visibled_image_selected(self):
@@ -102,24 +111,34 @@ class CreateCourse(Base):
 
 
     def input_title(self):
-        with allure.step("Ввели название курсов"):
+        step = f"Ввели название курсов"
+        with allure.step(step):
+            logger.info(step)
             self.get_title().fill('Test')
 
     def input_time(self):
-        with allure.step("Время прохождения курса"):
+        step = "Время прохождения курса"
+        with allure.step(step):
+            logger.info(step)
             self.get_estemated_time().fill('4h')
 
     def input_description(self):
-        with allure.step("Описание курса"):
+        step = f"Описание курса"
+        with allure.step(step):
+            logger.info(step)
             self.get_description().fill('Python')
 
     def input_max_score(self):
-        with allure.step("Максимальное количество правильных ответов"):
+        step = f"Максимальное количество правильных ответов"
+        with allure.step(step):
+            logger.info(step)
             self.get_max_score().click()
             self.get_max_score().fill('30')
 
     def input_min_score(self):
-        with allure.step("Минимальное количество правильных ответов"):
+        step = f"Минимальное количество правильных ответов"
+        with allure.step(step):
+            logger.info(step)
             self.get_min_score().click()
             self.get_min_score().fill('5')
 

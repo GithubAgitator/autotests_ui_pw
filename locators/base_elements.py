@@ -1,5 +1,8 @@
 from playwright.sync_api import Locator, expect
 import allure
+from tools.logger import get_logger
+
+logger = get_logger("BASE_ELEMENT")
 
 
 class BaseElement:
@@ -14,20 +17,28 @@ class BaseElement:
 
     def get_locator(self, **kwargs) -> Locator:
         locator = self.locator.format(**kwargs)
-        with allure.step(f"Getting locator with 'data-testid={locator}"):
+        step = f"Getting locator with 'data-testid={locator}"
+        with allure.step(step):
+            logger.info(step)
             return self.browser.get_by_test_id(locator)
 
     def click(self, **kwargs):
-        with allure.step(f"Clicking {self.type_of} '{self.name}' is visible"):
+        step = f"Clicking {self.type_of} '{self.name}' is visible"
+        with allure.step(step):
             locator = self.get_locator(**kwargs)
+            logger.info(step)
             locator.click()
 
     def check_visible(self, **kwargs):
-        with allure.step(f"Checking {self.type_of} '{self.name}' is visible"):
+        step = f"Checking {self.type_of} '{self.name}' is visible"
+        with allure.step(step):
             locator = self.get_locator(**kwargs)
+            logger.info(step)
             expect(locator).to_be_visible()
 
     def check_have_text(self, text: str, **kwargs):
-        with allure.step(f"Checking {self.type_of} '{self.name}' has text '{text}'"):
+        step = f"Checking {self.type_of} '{self.name}' has text '{text}'"
+        with allure.step(step):
             locator = self.get_locator(**kwargs)
+            logger.info(step)
             expect(locator).to_have_text(text)

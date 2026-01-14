@@ -53,7 +53,7 @@ class AvtorizacionUser(Base):
     def autorizacion(self):
         with allure.step("register"):
             Logger.add_start_step(method="Регистрация пользователя")
-            self.browser.goto(settings.app_url + AppRoute.LOGIN)
+            self.browser.goto(str(settings.app_url) + AppRoute.LOGIN)
             # self.page.url()
             self.input_email()
             self.input_password()

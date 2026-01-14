@@ -1,0 +1,26 @@
+
+-----
+Test: tests/test_login.py::test_login[firefox] (call)
+Start time: 2026-01-13 21:53:46.149494
+Start name method: Регистрация пользователя
+
+End time: 2026-01-13 21:54:04.238502
+End name method: login
+
+-----
+
+-----
+Test: tests/test_login.py::test_login[firefox] (call)
+Start time: 2026-01-13 21:54:04.239232
+Start name method: Регистрация пользователя
+
+End time: 2026-01-13 21:54:21.080771
+End name method: avtorizacia
+
+-----
+
+-----
+Test: tests/test_login.py::test_login[webkit] (call)
+Start time: 2026-01-13 21:54:24.859942
+Start name method: Регистрация пользователя
+
