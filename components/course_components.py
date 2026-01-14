@@ -66,7 +66,7 @@ class Coursed(Base):
         expect(self.get_min_score()).to_have_value(value)
 
 
-        
+
 
 
 

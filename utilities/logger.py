@@ -2,6 +2,8 @@ import datetime
 import os
 
 
+
+
 class Logger:
     file_name = f"C:\\Users\\d.milyakova\\Desktop\\autotests_ui_pw\\pythonProject\\logs\\log_" + str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")) + ".log"
 
