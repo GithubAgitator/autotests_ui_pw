@@ -1,0 +1,4 @@
+[32mINFO    [0m CREATECOURSE:create_course.py:80 Кнопка создание курса
+[32mINFO    [0m CREATECOURSE:create_course.py:86 Кнопка для создания курсов присутствует
+[32mINFO    [0m CREATECOURSE:create_course.py:93 Иконка курсов видна
+[32mINFO    [0m CREATECOURSE:create_course.py:116 Ввели название курсов
