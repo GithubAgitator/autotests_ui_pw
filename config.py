@@ -1,4 +1,4 @@
-from typing import Self
+from typing import Self, List
 
 from _pytest.config.findpaths import ConfigDict
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -32,6 +32,11 @@ class ViewportSettings(BaseConfig):
     tablet: Dict[str, int] = Field(default_factory=lambda: {"width": 768, "height": 1024})
     desktop: Dict[str, int] = Field(default_factory=lambda: {"width": 1920, "height": 1080})
 
+class WindowVersion(BaseModel):
+    sustema: str
+    version: int
+
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",  # Указываем, из какого файла читать настройки
@@ -41,6 +46,7 @@ class Settings(BaseSettings):
     app_url: HttpUrl
     headless: bool
     browsers: list[Browser]
+    window_version: WindowVersion
     viewport_settings: ViewportSettings
     test_user: TestUser
     test_data: TestData
