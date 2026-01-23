@@ -9,7 +9,7 @@ from pages.authtentificatia.res_register import ResRegister
 def test_register():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
-        context = browser.new_context(storage_state='browser-stage.json')
+        context = browser.new_context(storage_state='browser-stage_reg.json')
         page = context.new_page()
 
         res_register = ResRegister(browser, page)

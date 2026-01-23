@@ -1,0 +1,140 @@
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[firefox-login_password0] (call)
+Start time: 2026-01-22 22:27:56.723565
+Start name method: Регистрация пользователя
+
+End time: 2026-01-22 22:28:05.999262
+End name method: avtorizacia
+
+-----
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[firefox-login_password1] (call)
+Start time: 2026-01-22 22:28:13.530989
+Start name method: Регистрация пользователя
+
+End time: 2026-01-22 22:28:21.938827
+End name method: avtorizacia
+
+-----
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[firefox-login_password2] (call)
+Start time: 2026-01-22 22:28:28.677459
+Start name method: Регистрация пользователя
+
+End time: 2026-01-22 22:28:36.227327
+End name method: avtorizacia
+
+-----
+
+-----
+Test: tests/test_dasbord_grafic.py::test_dashboard[firefox] (call)
+Start time: 2026-01-22 22:28:42.858612
+Start name method: Страница с дашбордом
+
+End time: 2026-01-22 22:28:50.223150
+End name method: Dashboard
+
+-----
+
+-----
+Test: tests/test_dasbord_grafic.py::test_dashboard[webkit] (call)
+Start time: 2026-01-22 22:28:53.959445
+Start name method: Страница с дашбордом
+
+End time: 2026-01-22 22:29:01.376777
+End name method: Dashboard
+
+-----
+
+-----
+Test: tests/test_dasbord_grafic.py::test_dashboard[chromium] (call)
+Start time: 2026-01-22 22:29:03.581328
+Start name method: Страница с дашбордом
+
+End time: 2026-01-22 22:29:09.711319
+End name method: Dashboard
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[webkit] (call)
+Start time: 2026-01-22 22:29:12.283836
+Start name method: Dasboards
+
+End time: 2026-01-22 22:29:26.035153
+End name method: Dasboards
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[webkit] (call)
+Start time: 2026-01-22 22:29:26.036006
+Start name method: Courses
+
+End time: 2026-01-22 22:29:32.109289
+End name method: Courses
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[webkit] (call)
+Start time: 2026-01-22 22:29:32.110285
+Start name method: Logout
+
+End time: 2026-01-22 22:29:39.704027
+End name method: Logout
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[chromium] (call)
+Start time: 2026-01-22 22:29:41.747391
+Start name method: Dasboards
+
+End time: 2026-01-22 22:29:48.668595
+End name method: Dasboards
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[chromium] (call)
+Start time: 2026-01-22 22:29:48.669286
+Start name method: Courses
+
+End time: 2026-01-22 22:29:54.065326
+End name method: Courses
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[chromium] (call)
+Start time: 2026-01-22 22:29:54.066134
+Start name method: Logout
+
+End time: 2026-01-22 22:29:59.440379
+End name method: Logout
+
+-----
+
+-----
+Test: tests/test_reg_hw.py::test_reg_hw (call)
+Start time: 2026-01-22 22:30:02.036823
+Start name method: register
+
+End time: 2026-01-22 22:30:12.003471
+End name method: Пользователь зарегистрирован
+
+-----
+
+-----
+Test: tests/test_reg_hw_res.py::test_register (call)
+Start time: 2026-01-22 22:30:14.255297
+Start name method: register
+
+End time: 2026-01-22 22:30:20.985938
+End name method: Пользователь залогинен
+
+-----

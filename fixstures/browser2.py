@@ -29,8 +29,9 @@ def browser_pages_2(request: SubRequest):
     with sync_playwright() as p:
         browser_type = getattr(p, browser_name)
         browser = browser_type.launch(headless=settings.headless)
-        context = browser.new_context(record_video_dir=settings.videos_dir, no_viewport=True,
-                                          storage_state=settings.browser_state_file,
+        context = browser.new_context(record_video_dir=settings.videos_dir,
+                                      no_viewport=True,
+                                      storage_state=settings.browser_state_file,
                                       viewport=settings.viewport_settings.desktop,
                                                )
         context.tracing.start(screenshots=True, snapshots=True, sources=True)

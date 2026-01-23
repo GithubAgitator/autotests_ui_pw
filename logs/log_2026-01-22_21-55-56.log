@@ -1,0 +1,438 @@
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[webkit-login_password2] (call)
+Start time: 2026-01-22 21:55:58.470368
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[firefox-login_password0] (call)
+Start time: 2026-01-22 21:56:02.607395
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[firefox-login_password3] (call)
+Start time: 2026-01-22 21:56:03.265116
+Start name method: Регистрация пользователя
+
+End time: 2026-01-22 21:56:07.110006
+End name method: avtorizacia
+
+-----
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[webkit-login_password3] (call)
+Start time: 2026-01-22 21:56:09.340901
+Start name method: Регистрация пользователя
+
+End time: 2026-01-22 21:56:14.829656
+End name method: avtorizacia
+
+-----
+End time: 2026-01-22 21:56:16.424709
+End name method: avtorizacia
+
+-----
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[webkit-login_password0] (call)
+Start time: 2026-01-22 21:56:17.850237
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[chromium-login_password0] (call)
+Start time: 2026-01-22 21:56:18.708699
+Start name method: Регистрация пользователя
+
+End time: 2026-01-22 21:56:21.754220
+End name method: avtorizacia
+
+-----
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[firefox-login_password1] (call)
+Start time: 2026-01-22 21:56:27.981745
+Start name method: Регистрация пользователя
+
+End time: 2026-01-22 21:56:35.878592
+End name method: avtorizacia
+
+-----
+End time: 2026-01-22 21:56:36.214809
+End name method: avtorizacia
+
+-----
+End time: 2026-01-22 21:56:36.906106
+End name method: avtorizacia
+
+-----
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[webkit-login_password1] (call)
+Start time: 2026-01-22 21:56:39.154459
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[chromium-login_password1] (call)
+Start time: 2026-01-22 21:56:40.026980
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[firefox-login_password2] (call)
+Start time: 2026-01-22 21:56:43.873917
+Start name method: Регистрация пользователя
+
+End time: 2026-01-22 21:56:51.542946
+End name method: avtorizacia
+
+-----
+End time: 2026-01-22 21:56:52.856409
+End name method: avtorizacia
+
+-----
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[chromium-login_password2] (call)
+Start time: 2026-01-22 21:56:54.334128
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_dasbord_grafic.py::test_dashboard[firefox] (call)
+Start time: 2026-01-22 21:57:00.220250
+Start name method: Страница с дашбордом
+
+End time: 2026-01-22 21:57:00.401050
+End name method: avtorizacia
+
+-----
+End time: 2026-01-22 21:57:02.028964
+End name method: avtorizacia
+
+-----
+
+-----
+Test: tests/test_course.py::test_cousesed[chromium] (call)
+Start time: 2026-01-22 21:57:02.374004
+Start name method: course
+
+End time: 2026-01-22 21:57:03.841054
+End name method: Coursed
+
+-----
+
+-----
+Test: tests/test_autofication/test_avtorization.py::test_autorizacia[chromium-login_password3] (call)
+Start time: 2026-01-22 21:57:04.893758
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_create_course.py::test_created_course[firefox] (call)
+Start time: 2026-01-22 21:57:09.552480
+Start name method: Created course
+
+
+-----
+Test: tests/test_dasbord_grafic.py::test_dashboard[webkit] (call)
+Start time: 2026-01-22 21:57:12.328342
+Start name method: Страница с дашбордом
+
+End time: 2026-01-22 21:57:13.004022
+End name method: avtorizacia
+
+-----
+End time: 2026-01-22 21:57:14.985189
+End name method: Created coursed
+
+-----
+
+-----
+Test: tests/test_create_course.py::test_created_course[webkit] (call)
+Start time: 2026-01-22 21:57:18.068955
+Start name method: Created course
+
+
+-----
+Test: tests/test_course.py::test_cousesed[firefox] (call)
+Start time: 2026-01-22 21:57:18.854162
+Start name method: course
+
+
+-----
+Test: tests/test_dasbord_grafic.py::test_dashboard[chromium] (call)
+Start time: 2026-01-22 21:57:21.789808
+Start name method: Страница с дашбордом
+
+End time: 2026-01-22 21:57:22.497921
+End name method: Coursed
+
+-----
+
+-----
+Test: tests/test_course.py::test_cousesed[webkit] (call)
+Start time: 2026-01-22 21:57:25.455674
+Start name method: course
+
+End time: 2026-01-22 21:57:26.963327
+End name method: Coursed
+
+-----
+End time: 2026-01-22 21:57:27.381156
+End name method: Created coursed
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[webkit] (call)
+Start time: 2026-01-22 21:57:29.176127
+Start name method: Dasboards
+
+
+-----
+Test: tests/test_create_course.py::test_created_course[chromium] (call)
+Start time: 2026-01-22 21:57:29.397799
+Start name method: Created course
+
+
+-----
+Test: tests/test_desabled.py::test_desabled (call)
+Start time: 2026-01-22 21:57:31.250645
+Start name method: Проверка, что кнопка неактивна
+
+End time: 2026-01-22 21:57:32.691845
+End name method: Created coursed
+
+-----
+
+-----
+Test: tests/test_login.py::test_login[firefox] (call)
+Start time: 2026-01-22 21:57:36.974831
+Start name method: Регистрация пользователя
+
+End time: 2026-01-22 21:57:38.399527
+End name method: Кнопка не активна, заголовок изменен
+
+-----
+
+-----
+Test: tests/test_hover.py::test_hover (call)
+Start time: 2026-01-22 21:57:40.408651
+Start name method: Наведение мышки на кнопку Регистрация
+
+End time: 2026-01-22 21:57:41.205397
+End name method: Dasboards
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[webkit] (call)
+Start time: 2026-01-22 21:57:41.206122
+Start name method: Courses
+
+End time: 2026-01-22 21:57:46.058413
+End name method: login
+
+-----
+
+-----
+Test: tests/test_login.py::test_login[firefox] (call)
+Start time: 2026-01-22 21:57:46.059073
+Start name method: Регистрация пользователя
+
+End time: 2026-01-22 21:57:46.878619
+End name method: Courses
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[webkit] (call)
+Start time: 2026-01-22 21:57:46.879507
+Start name method: Logout
+
+End time: 2026-01-22 21:57:49.466707
+End name method: hover
+
+-----
+End time: 2026-01-22 21:57:51.501574
+End name method: avtorizacia
+
+-----
+End time: 2026-01-22 21:57:53.968321
+End name method: Logout
+
+-----
+
+-----
+Test: tests/test_login.py::test_login[webkit] (call)
+Start time: 2026-01-22 21:57:54.461877
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[firefox] (call)
+Start time: 2026-01-22 21:57:54.558560
+Start name method: Dasboards
+
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[chromium] (call)
+Start time: 2026-01-22 21:57:56.439543
+Start name method: Dasboards
+
+End time: 2026-01-22 21:58:03.719954
+End name method: Dasboards
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[chromium] (call)
+Start time: 2026-01-22 21:58:03.720968
+Start name method: Courses
+
+End time: 2026-01-22 21:58:03.952476
+End name method: Dasboards
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[firefox] (call)
+Start time: 2026-01-22 21:58:03.953384
+Start name method: Courses
+
+End time: 2026-01-22 21:58:06.977814
+End name method: login
+
+-----
+
+-----
+Test: tests/test_login.py::test_login[webkit] (call)
+Start time: 2026-01-22 21:58:06.978783
+Start name method: Регистрация пользователя
+
+End time: 2026-01-22 21:58:09.428508
+End name method: Courses
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[chromium] (call)
+Start time: 2026-01-22 21:58:09.429612
+Start name method: Logout
+
+End time: 2026-01-22 21:58:09.725471
+End name method: Courses
+
+-----
+
+-----
+Test: tests/test_list_bar_dasboards.py::test_list_menu[firefox] (call)
+Start time: 2026-01-22 21:58:09.726805
+Start name method: Logout
+
+End time: 2026-01-22 21:58:13.525880
+End name method: avtorizacia
+
+-----
+End time: 2026-01-22 21:58:14.935543
+End name method: Logout
+
+-----
+
+-----
+Test: tests/test_login2.py::test_hover (call)
+Start time: 2026-01-22 21:58:15.302985
+Start name method: Проверка, что кнопка неактивна
+
+End time: 2026-01-22 21:58:15.472655
+End name method: Logout
+
+-----
+
+-----
+Test: tests/test_reg_hw.py::test_reg_hw (call)
+Start time: 2026-01-22 21:58:17.257256
+Start name method: register
+
+
+-----
+Test: tests/test_login.py::test_login[chromium] (call)
+Start time: 2026-01-22 21:58:18.577232
+Start name method: Регистрация пользователя
+
+End time: 2026-01-22 21:58:23.052859
+End name method: Кнопка не активна, заголовок изменен
+
+-----
+End time: 2026-01-22 21:58:24.500925
+End name method: Пользователь зарегистрирован
+
+-----
+
+-----
+Test: tests/test_registration.py::test_register1[webkit] (call)
+Start time: 2026-01-22 21:58:25.178331
+Start name method: register
+
+End time: 2026-01-22 21:58:25.643098
+End name method: login
+
+-----
+
+-----
+Test: tests/test_login.py::test_login[chromium] (call)
+Start time: 2026-01-22 21:58:25.643726
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_reg_hw_res.py::test_register (call)
+Start time: 2026-01-22 21:58:27.135487
+Start name method: register
+
+End time: 2026-01-22 21:58:28.938178
+End name method: Пользователь зарегистрирован
+
+-----
+
+-----
+Test: tests/test_registration.py::test_register1[chromium] (call)
+Start time: 2026-01-22 21:58:30.529875
+Start name method: register
+
+End time: 2026-01-22 21:58:30.952817
+End name method: avtorizacia
+
+-----
+End time: 2026-01-22 21:58:33.489096
+End name method: Пользователь зарегистрирован
+
+-----
+End time: 2026-01-22 21:58:34.222938
+End name method: Пользователь залогинен
+
+-----
+
+-----
+Test: tests/test_registration.py::test_register1[firefox] (call)
+Start time: 2026-01-22 21:58:35.248946
+Start name method: register
+
+End time: 2026-01-22 21:58:40.298168
+End name method: Пользователь зарегистрирован
+
+-----
+
+-----
+Test: tests/test_res_register.py::test_register (call)
+Start time: 2026-01-22 21:58:44.545247
+Start name method: register
+
+End time: 2026-01-22 21:58:54.330182
+End name method: Пользователь зарегистрирован
+
+-----

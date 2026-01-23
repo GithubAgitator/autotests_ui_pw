@@ -11,25 +11,25 @@ class NavbarComponent(Base):
         super().__init__(page)
 
     #Locators
-    dashboard = 'dashboard-toolbar-title-text'
-    students = 'students-widget-title-text'
+    dashboard = "dashboard-toolbar-title-text"
+    students = "students-widget-title-text"
 
     #Getters
     def get_dasboard(self):
-        return Text(self.browser, self.dashboard, "dasboard")
+        return Text(self.browser, self.dashboard, 'Dashboard')
 
     def get_students(self):
-        return Text(self.browser, self.students, "students")
+        return Text(self.browser, self.students, 'Students')
 
     #Actions
     def text_dashboard(self):
         with allure.step("Надпись Dasboard присутствует"):
-            expect(self.get_dasboard()).to_have_text('Dashboard')
+            self.get_dasboard().check_have_text('Dashboard')
 
     def text_students(self):
         with allure.step("Надпись Students присутствует"):
-            expect(self.get_students()).to_be_visible()
-            expect(self.get_students()).to_have_text('Students')
+            self.get_students().check_visible()
+            self.get_students().check_have_text('Students')
 
     def navbar(self):
         with allure.step("dashboard"):
