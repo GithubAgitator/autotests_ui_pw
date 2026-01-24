@@ -4,7 +4,6 @@ __pycache__
 allure-results
 allure-report
 *.html
-*.json
 videos
 tracing
 
