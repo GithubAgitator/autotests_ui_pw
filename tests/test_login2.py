@@ -10,7 +10,7 @@ from allure_commons.types import Severity
 @allure.severity(Severity.CRITICAL)
 def test_hover():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         page.on("request", log_request)  # Запрос отправлен
         page.on("response", log_response)

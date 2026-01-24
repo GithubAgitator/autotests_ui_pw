@@ -8,7 +8,7 @@ from pages.authtentificatia.res_register import ResRegister
 @allure.description("ResRegister")
 def test_register():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context(storage_state='browser-stage_reg.json')
         page = context.new_page()
 
