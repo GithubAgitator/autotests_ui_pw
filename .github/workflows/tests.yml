@@ -63,6 +63,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}  # Токен для аутентификации на GitHub
           publish_branch: gh-pages  # Указываем, что отчёт будет опубликован в ветке gh-pages
           force_orphan: true
+          allow_empty_commit: true
+          keep_files: false
+          enable_jekyll: false   # Отключает Jekyll
           publish_dir: allure-history  # Указываем папку, которая будет опубликована на GitHub Pages
 
 
