@@ -44,6 +44,10 @@ jobs:
         if: always()  # Всегда выполняем, независимо от успеха или неудачи предыдущих шагов
         continue-on-error: true  # Если здесь возникнет ошибка, workflow всё равно продолжит выполнение
         with:
+          force_orphan: true
+          allow_empty_commit: true
+          keep_files: false
+          enable_jekyll: false   # Отключает Jekyll
           ref: gh-pages  # Указываем ветку gh-pages для получения отчётов
           path: gh-pages  # Указываем путь для сохранения отчётов
 
@@ -62,10 +66,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}  # Токен для аутентификации на GitHub
           publish_branch: gh-pages  # Указываем, что отчёт будет опубликован в ветке gh-pages
-          force_orphan: true
-          allow_empty_commit: true
-          keep_files: false
-          enable_jekyll: false   # Отключает Jekyll
           publish_dir: allure-history  # Указываем папку, которая будет опубликована на GitHub Pages
 
 
