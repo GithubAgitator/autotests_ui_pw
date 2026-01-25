@@ -14,6 +14,10 @@ on:
 jobs:
   run-tests:
     runs-on: ubuntu-latest  # Указываем, что тесты будут запускаться на последней версии Ubuntu
+    permissions:
+      contents: write               # ← ПРАВА НА ЗАПИСЬ
+      pages: write                  # ← ПРАВА ДЛЯ PAGES
+      id-token: write               # ← ДЛЯ DEPLOY
 
     steps:
       # 1. Шаг, который будет клонировать ваш репозиторий на машину GitHub Actions
