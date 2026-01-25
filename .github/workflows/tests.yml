@@ -61,11 +61,38 @@ jobs:
 
       # 7. Шаг для деплоя отчёта Allure на GitHub Pages, чтобы его можно было просматривать в браузере
       - name: Deploy report to Github Pages
-        if: always()  # Выполняется всегда, независимо от успеха других шагов
-        uses: peaceiris/actions-gh-pages@v4  # Используем GitHub Action для публикации отчёта на GitHub Pages
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # Токен для аутентификации на GitHub
-          publish_branch: gh-pages  # Указываем, что отчёт будет опубликован в ветке gh-pages
-          publish_dir: allure-history  # Указываем папку, которая будет опубликована на GitHub Pages
+        if: always()
+        run: |
+          # Очистка
+          rm -rf deploy_temp || true
+          mkdir -p deploy_temp
+
+          # Копируем отчёт
+          cp -r allure-history/* deploy_temp/ || true
+
+          cd deploy_temp
+
+          # Инициализация чистого git
+          git init
+          git checkout --orphan gh-pages
+
+          # Добавляем .nojekyll для GitHub Pages
+          touch .nojekyll
+          git add .nojekyll
+
+          # Добавляем все файлы отчёта
+          git add -A .
+          git -c user.name="GitHub Actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "Allure Report ${{ github.run_id }} (${{ github.sha }})"
+
+          # Push в gh-pages (создаст ветку автоматически)
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git branch -M gh-pages
+          git push -f origin gh-pages
+
+          cd .. && rm -rf deploy_temp
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
