@@ -8,7 +8,7 @@ from allure_commons.types import Severity
 
 @allure.title("Авторизация, выбор логина и пароля")
 @allure.description("Авторизация")
-@allure.tag(AllureTags.AUTHRIZATION)
+@allure.tag(AllureTags.AUTHRIZATIO N)
 @allure.severity(Severity.CRITICAL)
 def test_autorizacia(chromium_page, login_password):
     login, password = login_password
