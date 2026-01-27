@@ -42,8 +42,16 @@ jobs:
         run: |
           python -m pytest -sv --numprocesses=3  --alluredir=allure-results  # Запускаем тесты, отмеченные как "regression", генерируем результаты для Allure
 
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+            name: allure-results
+            path: allure-results
+
   publish-report:
-    needs: run-tests            # чтобы репорт собирался после тестов
+    if: always()
+    needs: [run-tests]            # чтобы репорт собирался после тестов
     runs-on: ubuntu-latest
     permissions:
       contents: write
