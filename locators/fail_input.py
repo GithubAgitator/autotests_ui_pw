@@ -2,6 +2,7 @@ import allure
 from playwright.sync_api import expect, Locator
 from locators.base_elements import BaseElement
 from tools.logger import get_logger
+from ui_coverage_tool import ActionType
 
 logger = get_logger("FAILINPUT")
 class FailInput(BaseElement):
@@ -16,3 +17,5 @@ class FailInput(BaseElement):
             locator = self.get_locator(**kwargs)
             logger.info(step)
             locator.set_input_files(file)
+
+        self.track_coverage(ActionType.FILL, **kwargs)

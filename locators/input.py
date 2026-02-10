@@ -2,6 +2,7 @@ import allure
 from playwright.sync_api import expect, Locator
 from locators.base_elements import BaseElement
 from tools.logger import get_logger
+from ui_coverage_tool import ActionType
 
 logger = get_logger("INPUT")
 class Input(BaseElement):
@@ -14,6 +15,9 @@ class Input(BaseElement):
     def get_locator(self, **kwargs) -> Locator:
         return super().get_locator(**kwargs).locator('input')
 
+    def get_raw_locator(self, **kwargs) -> str:
+        return f'{super().get_raw_locator(**kwargs)}//input'
+
     def fill(self, value, **kwargs):
         step = f"Fill {self.type_of} '{self.name}' to value '{value}'"
         with allure.step(step):
@@ -21,9 +25,13 @@ class Input(BaseElement):
             logger.info(step)
             locator.fill(value)
 
+        self.track_coverage(ActionType.FILL, **kwargs)
+
     def check_have_value(self, value, **kwargs):
         step = f"Checking that {self.type_of} '{self.name}' has a value '{value}'"
         with allure.step(step):
             locator = self.get_locator(**kwargs)
             logger.info(step)
             expect(locator).to_have_value(value)
+
+        self.track_coverage(ActionType.VALUE, **kwargs)

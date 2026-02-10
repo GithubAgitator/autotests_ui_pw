@@ -1,0 +1,24 @@
+
+-----
+Test: tests/test_login.py::test_login[firefox] (call)
+Start time: 2026-02-09 08:53:39.362865
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_login.py::test_login[webkit] (call)
+Start time: 2026-02-09 08:53:49.012743
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_login.py::test_login[chromium] (call)
+Start time: 2026-02-09 08:53:56.790962
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_login2.py::test_hover (call)
+Start time: 2026-02-09 08:54:04.488268
+Start name method: Проверка, что кнопка неактивна
+

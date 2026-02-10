@@ -1,4 +1,6 @@
 from playwright.sync_api import expect
+from ui_coverage_tool import ActionType, SelectorType, UICoverageTracker
+
 from tools.routes import AppRoute
 import time
 import allure
@@ -8,12 +10,14 @@ from utilities.logger import Logger
 from config import settings
 
 
+
 class AvtorizacionUser(Base):
 
     # url = 'https://nikita-filonov.github.io/qa-automation-engineer-ui-course/'
     def __init__(self, browser):
         super().__init__(browser)
         self.browser = browser
+        self.tracker = UICoverageTracker('ui-course')
 
 
     # Locators
@@ -41,6 +45,9 @@ class AvtorizacionUser(Base):
     def input_email(self):
         self.get_email().fill('user.name@gmail.com')
 
+
+
+
     @allure.step("Ввести password")
     def input_password(self):
         self.get_password().fill('password')
@@ -49,6 +56,7 @@ class AvtorizacionUser(Base):
     @allure.step("Нажать на кнопку")
     def click_btn(self):
         self.get_btn().click()
+
 
     def autorizacion(self):
         with allure.step("register"):

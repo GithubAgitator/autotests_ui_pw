@@ -1,0 +1,56 @@
+
+-----
+Test: tests/test_login.py::test_login[firefox] (call)
+Start time: 2026-02-09 13:45:43.719050
+Start name method: Регистрация пользователя
+
+End time: 2026-02-09 13:45:56.727423
+End name method: login
+
+-----
+
+-----
+Test: tests/test_login.py::test_login[firefox] (call)
+Start time: 2026-02-09 13:45:56.729459
+Start name method: Регистрация пользователя
+
+End time: 2026-02-09 13:46:02.175273
+End name method: avtorizacia
+
+-----
+
+-----
+Test: tests/test_login.py::test_login[webkit] (call)
+Start time: 2026-02-09 13:46:05.155567
+Start name method: Регистрация пользователя
+
+
+-----
+Test: tests/test_login.py::test_login[chromium] (call)
+Start time: 2026-02-09 13:46:36.889694
+Start name method: Регистрация пользователя
+
+End time: 2026-02-09 13:46:46.006054
+End name method: login
+
+-----
+
+-----
+Test: tests/test_login.py::test_login[chromium] (call)
+Start time: 2026-02-09 13:46:46.007308
+Start name method: Регистрация пользователя
+
+End time: 2026-02-09 13:46:51.291567
+End name method: avtorizacia
+
+-----
+
+-----
+Test: tests/test_login2.py::test_hover (call)
+Start time: 2026-02-09 13:46:52.910353
+Start name method: Проверка, что кнопка неактивна
+
+End time: 2026-02-09 13:47:01.711067
+End name method: Кнопка не активна, заголовок изменен
+
+-----

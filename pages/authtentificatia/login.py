@@ -1,5 +1,5 @@
 from playwright.sync_api import expect
-
+from ui_coverage_tool import UICoverageTracker, ActionType, SelectorType
 import time
 import allure
 from base.base import Base
@@ -12,6 +12,7 @@ class Login(Base):
     def __init__(self, browser):
         super().__init__(browser)
         self.browser = browser
+        self.tracker = UICoverageTracker('ui-course')
 
     # Locators
     email = "registration-form-email-input"

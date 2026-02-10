@@ -2,6 +2,8 @@ from playwright.sync_api import expect
 
 import time
 import allure
+from ui_coverage_tool import UICoverageTracker, ActionType, SelectorType
+
 from base.base import Base
 from utilities.logger import Logger
 
@@ -12,6 +14,7 @@ class Avtorizacia(Base):
     def __init__(self, browser):
         super().__init__(browser)
         self.browser = browser
+        self.tracker = UICoverageTracker('ui-course')
 
 
     # Locators
@@ -37,6 +40,7 @@ class Avtorizacia(Base):
         # Actions
     def input_email(self, login):
         self.get_email().fill(login)
+
 
     def input_password(self, password):
         self.get_password().fill(password)
