@@ -3,7 +3,7 @@ from playwright.sync_api import sync_playwright, Request, Response
 
 import time
 import allure
-from ui_coverage_tool import UICoverageTracker, SelectorType
+from ui_coverage_tool import UICoverageTracker, SelectorType, ActionType
 
 from base.base import Base
 from utilities.logger import Logger
