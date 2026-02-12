@@ -1,5 +1,7 @@
 import time
 import allure
+from ui_coverage_tool import UICoverageTracker, SelectorType
+
 from base.base import Base
 from utilities.logger import Logger
 from locators.text import Text
@@ -10,6 +12,7 @@ class Dashboard(Base):
     def __init__(self, browser):
         super().__init__(browser)
         self.browser = browser
+        self.tracker = UICoverageTracker('ui-course')
 
     # Locators
     students_grafic = "students-bar-chart"
@@ -42,6 +45,24 @@ class Dashboard(Base):
 
     def get_scores_grafic(self):
         return Text(self.browser, self.scores_grafic, 'Scores_grafic')
+
+    def track_coverage(self, action_type: ActionType, locator_name: str = None):
+        """Отслеживание покрытия UI"""
+        if locator_name is None:
+            locator_name = "unknown"
+
+        if locator_name.startswith('//'):
+            # Уже XPath — используем как есть
+            selector = locator_name
+        else:
+            # TestID → конвертируем в XPath
+            selector = f"//*[@data-testid='{locator_name}']"
+
+        self.tracker.track_coverage(
+            selector=selector,
+            action_type=action_type,
+            selector_type=SelectorType.XPATH
+        )
 
         # Actions
     def text_students_grafic(self):

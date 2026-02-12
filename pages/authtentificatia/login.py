@@ -6,6 +6,7 @@ from base.base import Base
 from utilities.logger import Logger
 from locators.input import Input
 from locators.button import Button
+from ui_coverage_tool import ActionType, SelectorType, UICoverageTracker
 
 
 class Login(Base):
@@ -42,22 +43,46 @@ class Login(Base):
     def get_logout(self):
         return Button(self.browser, self.logout, "logout")
 
+    def track_coverage(self, action_type: ActionType, locator_name: str = None):
+        """Отслеживание покрытия UI"""
+        if locator_name is None:
+            locator_name = "unknown"
+
+        if locator_name.startswith('//'):
+            # Уже XPath — используем как есть
+            selector = locator_name
+        else:
+            # TestID → конвертируем в XPath
+            selector = f"//*[@data-testid='{locator_name}']"
+
+        self.tracker.track_coverage(
+            selector=selector,
+            action_type=action_type,
+            selector_type=SelectorType.XPATH
+        )
+
         # Actions
     def input_email(self):
         self.get_email().fill("user.name@gmail.com")
+        self.track_coverage(ActionType.FILL, self.email)
 
     def input_username(self):
         self.get_username().fill("username")
+        self.track_coverage(ActionType.FILL, self.username)
 
     def input_password(self):
         self.get_password().check_visible()
         self.get_password().fill("password")
+        self.track_coverage(ActionType.VISIBLE, self.password)
+        self.track_coverage(ActionType.FILL, self.password)
 
     def click_registration_btn(self):
         self.get_registration_btn().click()
+        self.track_coverage(ActionType.CLICK, self.registration_btn)
 
     def click_logout(self):
         self.get_logout().click()
+        self.track_coverage(ActionType.CLICK, self.logout)
 
     def login1(self):
         with allure.step("register"):

@@ -1,6 +1,7 @@
 import allure
 from base.base import Base
 from utilities.logger import Logger
+from ui_coverage_tool import ActionType, SelectorType, UICoverageTracker
 
 
 class RegHw(Base):
@@ -10,6 +11,7 @@ class RegHw(Base):
         self.page = page
         super().__init__(browser)
         self.browser = browser
+        self.tracker = UICoverageTracker('ui-course')
 
 
         # Locators
@@ -31,19 +33,41 @@ class RegHw(Base):
     def get_btn(self):
         return self.page.get_by_test_id(self.btn)
 
+    def track_coverage(self, action_type: ActionType, locator_name: str = None):
+        """Отслеживание покрытия UI"""
+        if locator_name is None:
+            locator_name = "unknown"
+
+        if locator_name.startswith('//'):
+            # Уже XPath — используем как есть
+            selector = locator_name
+        else:
+            # TestID → конвертируем в XPath
+            selector = f"//*[@data-testid='{locator_name}']"
+
+        self.tracker.track_coverage(
+            selector=selector,
+            action_type=action_type,
+            selector_type=SelectorType.XPATH
+        )
+
     # Actions
 
     def input_email(self):
         self.get_email().fill('hjk@gmail.com')
+        self.track_coverage(ActionType.FILL, self.email)
 
     def input_username(self):
         self.get_username().fill('Daria')
+        self.track_coverage(ActionType.FILL, self.username)
 
     def input_password(self):
         self.get_password().fill('password')
+        self.track_coverage(ActionType.FILL, self.password)
 
     def click_btn(self):
         self.get_btn().click()
+        self.track_coverage(ActionType.CLICK, self.btn)
 
     def reg_hw(self):
         with allure.step("register"):

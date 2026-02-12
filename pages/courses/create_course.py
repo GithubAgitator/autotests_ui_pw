@@ -1,6 +1,8 @@
 import time
 from playwright.sync_api import expect
 import allure
+from ui_coverage_tool import SelectorType, UICoverageTracker, ActionType
+
 from base.base import Base
 from tools.logger import get_logger
 from utilities.logger import Logger
@@ -16,6 +18,7 @@ class CreateCourse(Base):
         self.browser = browser
         self.components_course = Coursed(browser)
         self.img = CreatersImg(browser)
+        self.tracker = UICoverageTracker('ui-course')
 
     # Locators
     create_course = "//h6[@data-testid='create-course-toolbar-title-text']"
@@ -107,6 +110,24 @@ class CreateCourse(Base):
         expect(self.get_upload_image()).to_be_visible()
         expect(self.get_upload_image()).to_have_text('Tap on "Upload image" button to select file')
         print('Tap on "Upload image" button to select file')
+
+    def track_coverage(self, action_type: ActionType, locator_name: str = None):
+        """Отслеживание покрытия UI"""
+        if locator_name is None:
+            locator_name = "unknown"
+
+        if locator_name.startswith('//'):
+            # Уже XPath — используем как есть
+            selector = locator_name
+        else:
+            # TestID → конвертируем в XPath
+            selector = f"//*[@data-testid='{locator_name}']"
+
+        self.tracker.track_coverage(
+            selector=selector,
+            action_type=action_type,
+            selector_type=SelectorType.XPATH
+        )
 
 
 

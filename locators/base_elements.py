@@ -25,7 +25,8 @@ class BaseElement:
             return self.browser.get_by_test_id(locator)
 
     def get_raw_locator(self, **kwargs) -> str:
-        return f"//*[@data-testid='{self.locator.format(**kwargs)}']"
+        raw_locator = self.locator.format(**kwargs)
+        return raw_locator if raw_locator.startswith('//') else f"//*[@data-testid='{raw_locator}']"
 
     def track_coverage(self, action_type: ActionType, **kwargs):
         tracker.track_coverage(

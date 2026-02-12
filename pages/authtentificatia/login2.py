@@ -1,5 +1,5 @@
 from playwright.sync_api import expect
-
+from ui_coverage_tool import ActionType, SelectorType, UICoverageTracker
 import time
 import allure
 from base.base import Base
@@ -13,6 +13,7 @@ class Login2(Base):
         self.page = page
         super().__init__(browser)
         self.browser = browser
+        self.tracker = UICoverageTracker('ui-course')
 
 
     # Locators
@@ -35,21 +36,44 @@ class Login2(Base):
     def get_password(self):
         return self.page.get_by_test_id(self.password).locator('input')
 
+    def track_coverage(self, action_type: ActionType, locator_name: str = None):
+        """Отслеживание покрытия UI"""
+        if locator_name is None:
+            locator_name = "unknown"
+
+        if locator_name.startswith('//'):
+            # Уже XPath — используем как есть
+            selector = locator_name
+        else:
+            # TestID → конвертируем в XPath
+            selector = f"//*[@data-testid='{locator_name}']"
+
+        self.tracker.track_coverage(
+            selector=selector,
+            action_type=action_type,
+            selector_type=SelectorType.XPATH
+        )
+
         # Actions
     def desabled_registration_btn(self):
         expect(self.get_registration_btn()).to_be_disabled()
+        self.track_coverage(ActionType.DISABLED, self.registration_btn)
 
     def input_email(self):
         self.get_email().fill('user.name@gmail.com')
+        self.track_coverage(ActionType.FILL, self.email)
 
     def input_username(self):
         self.get_username().fill('username')
+        self.track_coverage(ActionType.FILL, self.username)
 
     def input_password(self):
         self.get_password().fill('password')
+        self.track_coverage(ActionType.FILL, self.password)
 
     def enabled_registration_btn(self):
         expect(self.get_registration_btn()).to_be_enabled()
+        self.track_coverage(ActionType.ENABLED, self.registration_btn)
 
 
     def login2(self):

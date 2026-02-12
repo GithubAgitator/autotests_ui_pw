@@ -3,6 +3,8 @@ from playwright.sync_api import sync_playwright, Request, Response
 
 import time
 import allure
+from ui_coverage_tool import UICoverageTracker, SelectorType
+
 from base.base import Base
 from utilities.logger import Logger
 
@@ -14,6 +16,7 @@ class Hover(Base):
         self.page = page
         super().__init__(browser)
         self.browser = browser
+        self.tracker = UICoverageTracker('ui-course')
 
 
     # Locators
@@ -23,6 +26,24 @@ class Hover(Base):
     # Getters
     def get_registration_btn(self):
         return self.page.get_by_test_id(self.registration_btn)
+
+    def track_coverage(self, action_type: ActionType, locator_name: str = None):
+        """Отслеживание покрытия UI"""
+        if locator_name is None:
+            locator_name = "unknown"
+
+        if locator_name.startswith('//'):
+            # Уже XPath — используем как есть
+            selector = locator_name
+        else:
+            # TestID → конвертируем в XPath
+            selector = f"//*[@data-testid='{locator_name}']"
+
+        self.tracker.track_coverage(
+            selector=selector,
+            action_type=action_type,
+            selector_type=SelectorType.XPATH
+        )
 
     def hover_registration_btn(self):
         self.get_registration_btn().hover()

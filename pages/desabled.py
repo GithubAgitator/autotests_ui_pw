@@ -2,6 +2,8 @@ from playwright.sync_api import expect
 
 import time
 import allure
+from ui_coverage_tool import ActionType, SelectorType, UICoverageTracker
+
 from base.base import Base
 from utilities.logger import Logger
 
@@ -13,6 +15,8 @@ class Desabled(Base):
         self.page = page
         super().__init__(browser)
         self.browser = browser
+        self.tracker = UICoverageTracker('ui-course')
+
 
 
     # Locators
@@ -29,6 +33,24 @@ class Desabled(Base):
 
     def get_email(self):
         return self.page.locator(self.email)
+
+    def track_coverage(self, action_type: ActionType, locator_name: str = None):
+        """Отслеживание покрытия UI"""
+        if locator_name is None:
+            locator_name = "unknown"
+
+        if locator_name.startswith('//'):
+            # Уже XPath — используем как есть
+            selector = locator_name
+        else:
+            # TestID → конвертируем в XPath
+            selector = f"//*[@data-testid='{locator_name}']"
+
+        self.tracker.track_coverage(
+            selector=selector,
+            action_type=action_type,
+            selector_type=SelectorType.XPATH
+        )
 
         # Actions
     def click_registration_btn(self):
