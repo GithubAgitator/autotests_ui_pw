@@ -1,0 +1,14 @@
+INFO     BASE_ELEMENT:base_elements.py:24 Getting locator with 'data-testid=registration-form-email-input
+INFO     INPUT:input.py:25 Fill input 'email' to value 'user.name@gmail.com'
+INFO     BASE_ELEMENT:base_elements.py:24 Getting locator with 'data-testid=registration-form-username-input
+INFO     INPUT:input.py:25 Fill input 'username' to value 'username'
+INFO     BASE_ELEMENT:base_elements.py:24 Getting locator with 'data-testid=registration-form-password-input
+INFO     BASE_ELEMENT:base_elements.py:52 Checking input 'password' is visible
+INFO     BASE_ELEMENT:base_elements.py:24 Getting locator with 'data-testid=registration-form-password-input
+INFO     INPUT:input.py:25 Fill input 'password' to value 'password'
+INFO     BASE_ELEMENT:base_elements.py:24 Getting locator with 'data-testid=registration-page-registration-button
+INFO     BASE_ELEMENT:base_elements.py:43 Clicking button 'register_btn' is visible
+INFO     BASE_ELEMENT:base_elements.py:24 Getting locator with 'data-testid=logout-drawer-list-item-title-text
+INFO     BASE_ELEMENT:base_elements.py:43 Clicking button 'logout' is visible
+INFO     BASE_ELEMENT:base_elements.py:24 Getting locator with 'data-testid=dashboard-drawer-list-item-button
+INFO     BASE_ELEMENT:base_elements.py:61 Checking text 'Text' has text 'Dashboard'

@@ -1,0 +1,6 @@
+INFO     BASE_ELEMENT:base_elements.py:24 Getting locator with 'data-testid=dashboard-toolbar-title-text
+INFO     BASE_ELEMENT:base_elements.py:61 Checking text 'Dashboard' has text 'Dashboard'
+INFO     BASE_ELEMENT:base_elements.py:24 Getting locator with 'data-testid=students-widget-title-text
+INFO     BASE_ELEMENT:base_elements.py:52 Checking text 'Students' is visible
+INFO     BASE_ELEMENT:base_elements.py:24 Getting locator with 'data-testid=students-widget-title-text
+INFO     BASE_ELEMENT:base_elements.py:61 Checking text 'Students' has text 'Students'
