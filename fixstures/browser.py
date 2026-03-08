@@ -1,3 +1,5 @@
+import os
+
 import allure
 import pytest
 from config import settings
@@ -19,7 +21,11 @@ def chromium_page(request: SubRequest):
         context.tracing.stop(path=settings.tracing_dir.joinpath(f'{request.node.name}.zip'))
 
         allure.attach.file(settings.tracing_dir.joinpath(f'{request.node.name}.zip'))
-        allure.attach.file(page.video.path(), name='video', attachment_type=allure.attachment_type.WEBM)
+        video_path = page.video.path()
+        if os.path.exists(video_path):  # ← ПРОВЕРКА
+            with open(video_path, 'rb') as f:
+                allure.attach(f.read(), name='video', attachment_type=allure.attachment_type.WEBM)
+        # allure.attach.file(page.video.path(), name='video', attachment_type=allure.attachment_type.WEBM)
 
 @pytest.fixture(scope="session")
 def avtorizacia_user(request: SubRequest, playwright):
