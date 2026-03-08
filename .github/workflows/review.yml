@@ -44,3 +44,5 @@ jobs:
 
           # Токен доступа к LLM (например, OpenAI), добавленный в Secrets репозитория
           LLM__HTTP_CLIENT__API_TOKEN: ${{ secrets.OPENAI_API_KEY }}
+
+
