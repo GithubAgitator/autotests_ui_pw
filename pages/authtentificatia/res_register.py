@@ -16,7 +16,7 @@ class ResRegister(Base):
     def res_register(self):
         with allure.step("register"):
             Logger.add_start_step(method='register')
-            self.page.goto(self.url, wait_until='networkidle')
+            self.page.goto(self.url, wait_until='domcontentloaded')
             # self.page.set_viewport_size({"width": 1900, "height": 1040})
             self.page.wait_for_timeout(5000)
             Logger.add_end_step(method="Пользователь зарегистрирован")
