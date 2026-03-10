@@ -1,0 +1,3 @@
+INFO     CREATECOURSE:create_course.py:80 Кнопка создание курса
+INFO     CREATECOURSE:create_course.py:86 Кнопка для создания курсов присутствует
+INFO     CREATECOURSE:create_course.py:93 Иконка курсов видна
